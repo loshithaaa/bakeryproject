@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %} HOME {% endblock title %}
+
+{% block body %}
+    <h1 align="center">Select items from below</h1>
+    <br>
+    
+    {% load static %}
+    <div style="text-align: center;">
+        <!-- Product 1 -->
+        <div style="display: inline-block; margin: 10px;">
+            <img src="{% static 'bread.png' %}" alt="bread" width="100" height="100">
+            <div>
+                <h3>Bread</h3>
+                <p>Price: 20.00</p>
+                <form action="{% url 'add_to_cart' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="1">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div style="display: inline-block; margin: 10px;">
+            <img src="{% static 'blackforest.jpg' %}" alt="blackforest" width="100" height="100">
+            <div>
+                <h3>Black Forest Cake</h3>
+                <p>Price: 150.00</p>
+                <form action="{% url 'add_to_cart' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="2">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div style="display: inline-block; margin: 10px;">
+            <img src="{% static 'cheesecake.jpg' %}" alt="cheesecake" width="100" height="100">
+            <div>
+                <h3>Cheesecake</h3>
+                <p>Price: 200.00</p>
+                <form action="{% url 'add_to_cart' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="3">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Product 4 -->
+        <div style="display: inline-block; margin: 10px;">
+            <img src="{% static 'pancake.jpg' %}" alt="pancakes" width="100" height="100">
+            <div>
+                <h3>Pancakes</h3>
+                <p>Price: 100.00</p>
+                <form action="{% url 'add_to_cart' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="4">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
